@@ -18,10 +18,7 @@
             background-color: #0b0a0c;
             color: #e6ddd2;
             font-family: 'Outfit', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
+            line-height: 1.7;
             position: relative;
             overflow-x: hidden;
         }
@@ -29,81 +26,30 @@
         body::before {
             content: "";
             position: fixed;
-            top: 40%;
+            top: 30%;
             left: 50%;
-            width: 1100px;
-            height: 1100px;
+            width: 1200px;
+            height: 1200px;
             background: 
-                radial-gradient(circle at 40% 40%, rgba(201, 162, 39, 0.04) 0%, transparent 55%),
-                radial-gradient(circle at 65% 60%, rgba(110, 25, 35, 0.065) 0%, transparent 50%),
-                radial-gradient(circle at 30% 70%, rgba(55, 30, 75, 0.045) 0%, transparent 45%);
+                radial-gradient(circle at 40% 40%, rgba(201, 162, 39, 0.035) 0%, transparent 55%),
+                radial-gradient(circle at 65% 55%, rgba(110, 25, 35, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 25% 70%, rgba(55, 30, 75, 0.04) 0%, transparent 45%);
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 0;
         }
 
-        /* ===== NAVIGATION ===== */
-        nav {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.8rem 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: #f0e9df;
-            letter-spacing: 0.04em;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.6rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #9a8b7a;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 400;
-        }
-
-        .nav-links a:hover {
-            color: #c9a227;
-        }
-
-        .nav-links a.active {
-            color: #c9a227;
-        }
-
         /* ===== HERO ===== */
         .hero {
-            flex: 1;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem 1.5rem 5rem;
+            padding: 4rem 1.5rem;
             position: relative;
             z-index: 1;
-        }
-
-        .container {
-            max-width: 780px;
-            animation: fadeIn 1.5s ease-out forwards;
         }
 
         .label {
@@ -111,18 +57,17 @@
             letter-spacing: 0.42em;
             text-transform: uppercase;
             color: #c9a227;
-            margin-bottom: 2.4rem;
-            font-weight: 400;
+            margin-bottom: 2.2rem;
             opacity: 0.95;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3.4rem, 9.5vw, 5.8rem);
+            font-size: clamp(3.5rem, 10vw, 6rem);
             font-weight: 500;
             color: #f7f1e8;
             letter-spacing: 0.03em;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.3rem;
             line-height: 1.05;
         }
 
@@ -130,92 +75,284 @@
             width: 42px;
             height: 1px;
             background: linear-gradient(90deg, transparent, #c9a227, #8b1e2d, transparent);
-            margin: 0 auto 2.2rem;
+            margin: 0 auto 2rem;
             opacity: 0.9;
         }
 
         .tagline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 3.1vw, 1.55rem);
-            font-weight: 400;
+            font-size: clamp(1.2rem, 3vw, 1.55rem);
             font-style: italic;
             color: #b5a494;
-            max-width: 540px;
-            margin: 0 auto 4rem;
+            max-width: 520px;
+            margin: 0 auto 3.5rem;
             line-height: 1.75;
         }
 
-        .status {
-            font-size: 0.68rem;
+        .enter-btn {
+            display: inline-block;
+            font-size: 0.72rem;
             letter-spacing: 0.32em;
             text-transform: uppercase;
-            color: #7a6d60;
+            color: #c9a227;
             border: 1px solid #3a2a28;
-            padding: 0.85rem 1.9rem;
-            display: inline-block;
+            padding: 1rem 2.4rem;
+            text-decoration: none;
+            transition: all 0.35s ease;
             background: rgba(255, 255, 255, 0.015);
         }
 
-        .status span {
+        .enter-btn:hover {
+            background: rgba(201, 162, 39, 0.08);
+            border-color: #c9a227;
+        }
+
+        /* ===== UNIVERSE SECTION ===== */
+        .universe {
+            padding: 7rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid #1c1816;
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.38em;
+            text-transform: uppercase;
+            color: #8a7a6a;
+            margin-bottom: 1.5rem;
+        }
+
+        .universe h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 500;
+            color: #f0e9df;
+            margin-bottom: 3.5rem;
+        }
+
+        .universe-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .universe-card {
+            flex: 1;
+            min-width: 240px;
+            max-width: 320px;
+            padding: 2.8rem 2rem;
+            border: 1px solid #2a2320;
+            background: rgba(255, 255, 255, 0.012);
+            transition: all 0.35s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .universe-card:hover {
+            border-color: #c9a227;
+            background: rgba(201, 162, 39, 0.03);
+        }
+
+        .universe-card .number {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
             color: #c9a227;
+            margin-bottom: 1.2rem;
+            display: block;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(14px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .universe-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #f0e9df;
+            margin-bottom: 0.8rem;
         }
 
-        @media (max-width: 800px) {
-            nav {
-                padding: 1.5rem 1.4rem;
+        .universe-card p {
+            font-size: 0.9rem;
+            color: #9a8b7a;
+            line-height: 1.6;
+        }
+
+        /* ===== STORYTELLER SECTION ===== */
+        .storyteller {
+            padding: 7rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid #1c1816;
+        }
+
+        .storyteller h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 500;
+            color: #f0e9df;
+            margin-bottom: 1.5rem;
+        }
+
+        .storyteller p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #b5a494;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .storyteller-link {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #c9a227;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 3px;
+            transition: border-color 0.3s ease;
+        }
+
+        .storyteller-link:hover {
+            border-color: #c9a227;
+        }
+
+        /* ===== CORRESPONDENCE ===== */
+        .correspondence {
+            padding: 6rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid #1c1816;
+        }
+
+        .correspondence h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: #f0e9df;
+            margin-bottom: 1rem;
+        }
+
+        .correspondence .sub {
+            font-size: 0.95rem;
+            color: #9a8b7a;
+            margin-bottom: 0.6rem;
+        }
+
+        .correspondence .desc {
+            font-size: 0.9rem;
+            color: #7a6d60;
+            max-width: 420px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.6;
+        }
+
+        .email {
+            font-size: 1rem;
+            color: #c9a227;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: opacity 0.3s ease;
+        }
+
+        .email:hover {
+            opacity: 0.75;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 2.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1c1816;
+            position: relative;
+            z-index: 1;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            color: #6a5e52;
+        }
+
+        footer .genres {
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+        }
+
+        @media (max-width: 700px) {
+            footer {
                 flex-direction: column;
-                gap: 1.4rem;
+                gap: 1rem;
+                text-align: center;
             }
 
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
+            .universe-grid {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">Mereneith Aredvi</a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="works.html">Works</a></li>
-            <li><a href="worlds.html">Worlds</a></li>
-            <li><a href="about.html">The Storyteller</a></li>
-            <li><a href="contact.html">Write to The Storyteller</a></li>
-        </ul>
-    </nav>
-
+    <!-- HERO -->
     <section class="hero">
-        <div class="container">
-            <p class="label">Dark Romance · Crime · Thriller</p>
-            
-            <h1>Mereneith Aredvi</h1>
-            
-            <div class="divider"></div>
-            
-            <p class="tagline">
-                Stories of power, desire, and the violence<br>that lives between them.
-            </p>
-            
-            <div class="status">
-                Site under construction · <span>Coming Soon</span>
-            </div>
+        <p class="label">Dark Romance · Crime · Thriller</p>
+        <h1>Mereneith Aredvi</h1>
+        <div class="divider"></div>
+        <p class="tagline">
+            Stories of power, desire, and the violence<br>that lives between them.
+        </p>
+        <a href="#universe" class="enter-btn">Enter the Universe</a>
+    </section>
+
+    <!-- UNIVERSE -->
+    <section class="universe" id="universe">
+        <p class="section-label">The Universe</p>
+        <h2>Enter the Universe</h2>
+
+        <div class="universe-grid">
+            <a href="works.html" class="universe-card">
+                <span class="number">01</span>
+                <h3>Works</h3>
+                <p>Stories currently taking shape in the dark.</p>
+            </a>
+
+            <a href="worlds.html" class="universe-card">
+                <span class="number">02</span>
+                <h3>Worlds</h3>
+                <p>The places where power, loyalty, and desire collide.</p>
+            </a>
         </div>
     </section>
+
+    <!-- STORYTELLER -->
+    <section class="storyteller">
+        <h2>The Story of the Storyteller</h2>
+        <p>Who writes from the shadows of power and longing.</p>
+        <a href="about.html" class="storyteller-link">Meet The Storyteller →</a>
+    </section>
+
+    <!-- CORRESPONDENCE -->
+    <section class="correspondence">
+        <h2>Correspondence</h2>
+        <p class="sub">When the stories are ready.</p>
+        <p class="desc">For reader correspondence, rights enquiries and other professional matters:</p>
+        <a href="mailto:mereneitharedvi@gmail.com" class="email">mereneitharedvi@gmail.com</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>Mereneith Aredvi © 2026</div>
+        <div class="genres">Mafia · Dark Romance · Thriller · Crime</div>
+    </footer>
 
 </body>
 </html>
